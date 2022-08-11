@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UHF-5E-Mq6">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Сurrency selection-->
+        <scene sceneID="3bQ-2R-7Cr">
+            <objects>
+                <viewController id="O7X-9W-iKY" customClass="MainViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TA1-zz-grk">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="S50-Ib-qj4">
+                                <rect key="frame" x="16" y="216.00000000000003" width="396" height="308.66666666666674"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1f50f877-128a-4058-ab8b-803c436ee6c1.jpg.850x445_q82_crop" translatesAutoresizingMaskIntoConstraints="NO" id="kuX-pK-Ph8">
+                                        <rect key="frame" x="0.0" y="0.0" width="396" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="gJ9-fe-8My"/>
+                                            <constraint firstAttribute="height" constant="150" id="sr3-ye-YHp"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the currency you want to transfer to another" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVu-Sc-3uA">
+                                        <rect key="frame" x="0.0" y="162" width="396" height="57.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fgv-BQ-Rkb">
+                                        <rect key="frame" x="0.0" y="231.33333333333331" width="396" height="32"/>
+                                        <segments>
+                                            <segment title="USD"/>
+                                            <segment title="EUR"/>
+                                            <segment title="RUB"/>
+                                            <segment title="KZT"/>
+                                            <segment title="AUD"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XL6-nG-7FZ">
+                                        <rect key="frame" x="0.0" y="274.33333333333331" width="396" height="34.333333333333314"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity у.e." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3g-7x-pmD">
+                                                <rect key="frame" x="0.0" y="0.33333333333337123" width="200" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="kY9-Zs-wy0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="light" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd5-Ku-MAm">
+                                                <rect key="frame" x="220" y="0.0" width="176" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Translate">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6kZ-3e-Ida"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6kZ-3e-Ida" firstAttribute="bottom" secondItem="S50-Ib-qj4" secondAttribute="bottom" multiplier="1.7" id="QFO-tJ-fPW"/>
+                            <constraint firstItem="S50-Ib-qj4" firstAttribute="leading" secondItem="6kZ-3e-Ida" secondAttribute="leading" constant="16" id="f4i-R1-yNv"/>
+                            <constraint firstItem="6kZ-3e-Ida" firstAttribute="trailing" secondItem="S50-Ib-qj4" secondAttribute="trailing" constant="16" id="sDh-TS-Qc3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Сurrency selection" id="zvg-CB-2WQ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ouz-jw-wnZ"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xaK-r8-96b" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="485.50724637681162" y="79.6875"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="Grr-qq-llb">
+            <objects>
+                <tableViewController id="2T6-HL-h2M" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1zm-Ru-kLp">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Currency" id="wCa-Ti-GgJ">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wCa-Ti-GgJ" id="961-NQ-d0V">
+                                    <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2T6-HL-h2M" id="J8z-Ir-N6Y"/>
+                            <outlet property="delegate" destination="2T6-HL-h2M" id="tK1-VS-uZO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="SjR-TE-m4K"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlc-NI-NJs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2186" y="80"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PhP-c6-8Qc">
+            <objects>
+                <navigationController id="eHy-J9-U8l" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aTS-vR-a5C">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2T6-HL-h2M" kind="relationship" relationship="rootViewController" id="kN2-eP-8jz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1nw-u5-iAY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1294" y="80"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mgC-WR-okT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UHF-5E-Mq6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="L8h-cB-d7W">
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O7X-9W-iKY" kind="relationship" relationship="rootViewController" id="jLE-Jh-Hp5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BAS-as-TEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-310" y="80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1f50f877-128a-4058-ab8b-803c436ee6c1.jpg.850x445_q82_crop" width="512" height="341"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

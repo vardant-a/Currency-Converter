@@ -21,7 +21,7 @@ struct Currency {
                 Currency(
                     designation: CurrencyDescription.shared.designations[index],
                     description: CurrencyDescription.shared.descriptions[index],
-                    image: CurrencyDescription.shared.designations[index]
+                    image: CurrencyDescription.shared.images[index]
                 )
             )
         }

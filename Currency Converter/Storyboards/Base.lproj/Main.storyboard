@@ -79,11 +79,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Сurrency selection" id="zvg-CB-2WQ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ouz-jw-wnZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="R9D-wI-VQ4">
+                            <connections>
+                                <segue destination="2T6-HL-h2M" kind="show" id="o0H-at-V36"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xaK-r8-96b" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="485.50724637681162" y="79.6875"/>
+            <point key="canvasLocation" x="416" y="80"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="Grr-qq-llb">
@@ -94,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Currency" id="wCa-Ti-GgJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="сurrency" id="wCa-Ti-GgJ">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wCa-Ti-GgJ" id="961-NQ-d0V">
@@ -112,23 +117,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlc-NI-NJs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="80"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="PhP-c6-8Qc">
-            <objects>
-                <navigationController id="eHy-J9-U8l" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aTS-vR-a5C">
-                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="2T6-HL-h2M" kind="relationship" relationship="rootViewController" id="kN2-eP-8jz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1nw-u5-iAY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1294" y="80"/>
+            <point key="canvasLocation" x="1161" y="80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mgC-WR-okT">

@@ -1,5 +1,5 @@
 //
-//  InfoListTableViewController.swift
+//  InfoListViewController.swift
 //  Currency Converter
 //
 //  Created by Алексей on 11.08.2022.
@@ -7,17 +7,11 @@
 
 import UIKit
 
-class InfoListTableViewController: UITableViewController {
+class InfoListViewController: UITableViewController {
 
     private var infoList = Currency.getInfoList()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -28,8 +22,14 @@ class InfoListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Currency", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "сurrency", for: indexPath)
+        let currency = infoList[indexPath.row]
+        var content = cell.defaultContentConfiguration()
+        content.text = currency.designation
+        content.secondaryText = currency.description
+        content.image = UIImage(named: currency.image)
         
+        cell.contentConfiguration = content
         return cell
     }
 
@@ -65,16 +65,6 @@ class InfoListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
     */
 

@@ -18,6 +18,8 @@
 		0E5F898128A5480D0019618E /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F898028A5480D0019618E /* ExchangeRates.swift */; };
 		0E5F898328A5482F0019618E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F898228A5482F0019618E /* NetworkManager.swift */; };
 		0E5F898528A548BB0019618E /* СhoiceCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */; };
+		0EE64AE428A68C59004C1C30 /* СonvectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE64AE328A68C59004C1C30 /* СonvectorViewController.swift */; };
+		0EE64AE628A6918B004C1C30 /* ExchangeRatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE64AE528A6918B004C1C30 /* ExchangeRatesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		0E5F898028A5480D0019618E /* ExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
 		0E5F898228A5482F0019618E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СhoiceCurrencyViewController.swift"; sourceTree = "<group>"; };
+		0EE64AE328A68C59004C1C30 /* СonvectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СonvectorViewController.swift"; sourceTree = "<group>"; };
+		0EE64AE528A6918B004C1C30 /* ExchangeRatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */,
+				0EE64AE328A68C59004C1C30 /* СonvectorViewController.swift */,
+				0EE64AE528A6918B004C1C30 /* ExchangeRatesViewController.swift */,
 				0E424F9628A5631F00E7DCDE /* InfoListViewController.swift */,
 			);
 			path = ViewControllers;
@@ -216,7 +222,9 @@
 				0E424F9928A56A7D00E7DCDE /* Currency.swift in Sources */,
 				0E5F896628A546400019618E /* AppDelegate.swift in Sources */,
 				0E5F898128A5480D0019618E /* ExchangeRates.swift in Sources */,
+				0EE64AE628A6918B004C1C30 /* ExchangeRatesViewController.swift in Sources */,
 				0E5F896828A546400019618E /* SceneDelegate.swift in Sources */,
+				0EE64AE428A68C59004C1C30 /* СonvectorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,9 +14,9 @@ struct Currency {
     
     static func getInfoList() -> [Currency] {
         var infoListOfСurrency: [Currency] = []
-        let count = min(CurrencyDescription.shared.designations.count, CurrencyDescription.shared.descriptions.count)
+        let iterationCount = min(CurrencyDescription.shared.designations.count, CurrencyDescription.shared.descriptions.count)
         
-        for index in 0...count {
+        for index in 0..<iterationCount {
             infoListOfСurrency.append(
                 Currency(
                     designation: CurrencyDescription.shared.designations[index],

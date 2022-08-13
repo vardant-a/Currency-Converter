@@ -43,5 +43,7 @@ class InfoListViewController: UITableViewController {
 extension InfoListViewController {
     
     // MARK: - Navigation
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

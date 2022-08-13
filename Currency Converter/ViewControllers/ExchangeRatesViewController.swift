@@ -10,82 +10,45 @@ import UIKit
 class ExchangeRatesViewController: UITableViewController {
     
     var multiplier: Double!
-
+    var indexCurrency: Int!
+    
+    private var valueList = Currency.getInfoList()
+    private var currencyValues: [Double] = [0.1111, 0.2222, 0.3333, 0.4444, 0.5555]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "test 2"
         print("Данные \(multiplier ?? 0)")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.rowHeight = 90
     }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        2
-//    }
-
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 5
-//    }
-
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ВСТАВИТЬ ТУТ!", for: indexPath)
-//        let currency = infoList[indexPath.row]
-//        var content = cell.defaultContentConfiguration()
-//
-//        content.text = currency.designation
-//        content.textProperties.font = UIFont.boldSystemFont(ofSize: 18)
-//        content.secondaryText = currency.description
-//        content.image = UIImage(named: currency.image)
-//        content.imageProperties.cornerRadius = 12
-//        cell.contentConfiguration = content
-//        return cell
-//
-//    }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        valueList.count
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exchangeCurrency", for: indexPath)
+        let currency = valueList[indexPath.row]
+        var content = cell.defaultContentConfiguration()
+        
+        content.text = currency.designation
+        content.textProperties.font = UIFont.boldSystemFont(ofSize: 15)
+        content.secondaryText = "При обмене 1 \(valueList[indexCurrency].name) вы получите - \(String(format: "%.2f", currencyValues[indexPath.row])) \(currency.name)"
+        content.image = UIImage(named: currency.image)
+        content.imageProperties.cornerRadius = 12
+        cell.contentConfiguration = content
+        return cell
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    // MARK: - Navigation
-
-     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         tableView.deselectRow(at: indexPath, animated: true)
-     }
+    
 }
+
+extension ExchangeRatesViewController {
+    
+    // MARK: - Navigation
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+

@@ -54,19 +54,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="jT6-s0-RZN">
                                         <rect key="frame" x="0.0" y="281.33333333333331" width="396" height="54.333333333333314"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Quantity у.e." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3g-7x-pmD">
-                                                <rect key="frame" x="0.0" y="0.0" width="277.66666666666669" height="54.333333333333336"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Quantity у.e." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3g-7x-pmD">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="54.333333333333336"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="XWs-Bw-U61"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="light" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd5-Ku-MAm">
-                                                <rect key="frame" x="295.66666666666669" y="0.0" width="100.33333333333331" height="54.333333333333336"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd5-Ku-MAm">
+                                                <rect key="frame" x="218" y="0.0" width="178" height="54.333333333333336"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Translate">
+                                                <buttonConfiguration key="configuration" style="filled" title="Convert">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="testTupped" destination="O7X-9W-iKY" eventType="touchUpInside" id="985-eL-dWz"/>
+                                                    <action selector="convertButtonTupped" destination="O7X-9W-iKY" eventType="touchUpInside" id="985-eL-dWz"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -87,6 +90,7 @@
                         <barButtonItem key="backBarButtonItem" title="To the choice of currency" id="ouz-jw-wnZ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageCurrency" destination="gBb-7j-182" id="D3Q-rq-Al8"/>
                         <outlet property="multiplierTF" destination="f3g-7x-pmD" id="Iwc-Mq-oS1"/>
                         <outlet property="selectionCurrency" destination="Fgv-BQ-Rkb" id="JbD-EW-ft6"/>
                         <segue destination="N0A-IV-WV8" kind="show" identifier="showTabBar" id="Vxz-zu-93T"/>
@@ -127,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="1968" y="-560"/>
         </scene>
-        <!--Exchange Rates-->
+        <!--Exchange Rate-->
         <scene sceneID="QqE-Uu-Gbr">
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="hCW-Dn-gCh" customClass="ExchangeRatesViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,7 +140,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Gf9-gV-3mD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="exchangeCurrency" id="Gf9-gV-3mD">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gf9-gV-3mD" id="T1d-HO-ZvP">
@@ -151,7 +155,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Exchange rates" image="chart.line.uptrend.xyaxis" catalog="system" id="Oxs-yW-u0M"/>
-                    <navigationItem key="navigationItem" title="Exchange Rates" id="bhA-OK-eEv"/>
+                    <navigationItem key="navigationItem" title="Exchange Rate" id="bhA-OK-eEv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERY-SO-e3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,6 +172,13 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1iV-Mi-uGh">
                                 <rect key="frame" x="0.0" y="140" width="428" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Данный раздел находится в разработке, следите за обновлениями." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yGr-Zx-Ebk">
+                                    <rect key="frame" x="0.0" y="111" width="428" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Z47-rT-mlL">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="43.666667938232422"/>

@@ -9,20 +9,21 @@ import UIKit
 
 class СhoiceCurrencyViewController: UIViewController {
     
+    // MARK: - IB Outlets
+    
+    @IBOutlet var imageCurrency: UIImageView!
+    @IBOutlet var selectionCurrency: UISegmentedControl!
+    @IBOutlet var multiplierTF: UITextField!
+    
     // MARK: Public Properties
     
     var multiplier: Double = 0
-    
-    var data = ExchangeRates.self
+    var indexCurrency = 0
     
     // MARK: Private Properties
     
     private var link = LinkCurrency.usd.rawValue
-    
-    // MARK: - IB Outlets
-    
-    @IBOutlet var selectionCurrency: UISegmentedControl!
-    @IBOutlet var multiplierTF: UITextField!
+    private let valueList = Currency.getInfoList()
 
     // MARK: - Override Methods
     
@@ -30,8 +31,12 @@ class СhoiceCurrencyViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         NetworkManager.shared.fetch(ExchangeRates.self, from: link) { result in
             switch result {
             case .success(let jsonData):
@@ -44,34 +49,43 @@ class СhoiceCurrencyViewController: UIViewController {
         guard let tabbarVC = segue.destination as? UITabBarController else { return }
         guard let convectorVC = tabbarVC.viewControllers?.first as? ConvectorViewController else { return }
         convectorVC.multiplier = multiplier
-        convectorVC.link = link
-        convectorVC.data = data
         
         guard let exchangeRatesVC = tabbarVC.viewControllers?.last as? ExchangeRatesViewController else { return }
         exchangeRatesVC.multiplier = multiplier
-        
+        exchangeRatesVC.indexCurrency = indexCurrency
     }
     
     // MARK: - IB Actions
     
     @IBAction func setSelectionCurrency() {
         switch selectionCurrency.selectedSegmentIndex {
+        case 0:
+            indexCurrency = 0
+            imageCurrency.image = UIImage(named: valueList[indexCurrency].image)
+            link = LinkCurrency.usd.rawValue
+            
         case 1:
+            indexCurrency = 1
+            imageCurrency.image = UIImage(named: valueList[indexCurrency].image)
             link = LinkCurrency.eur.rawValue
         case 2:
+            indexCurrency = 2
+            imageCurrency.image = UIImage(named: valueList[indexCurrency].image)
             link = LinkCurrency.rub.rawValue
         case 3:
+            indexCurrency = 3
+            imageCurrency.image = UIImage(named: valueList[indexCurrency].image)
             link = LinkCurrency.gpb.rawValue
-        case 4:
-            link = LinkCurrency.jpy.rawValue
         default:
-            link = LinkCurrency.usd.rawValue
+            indexCurrency = 4
+            imageCurrency.image = UIImage(named: valueList[indexCurrency].image)
+            link = LinkCurrency.jpy.rawValue
         }
         print(link)
     }
 
     
-    @IBAction func testTupped() {
+    @IBAction func convertButtonTupped() {
         textFieldDidEndEditing(multiplierTF)
         
         guard multiplier != 0 else {
@@ -97,7 +111,7 @@ extension СhoiceCurrencyViewController {
     private func showAlert() {
         let alert = UIAlertController(
             title: "Warning",
-            message: "You do not use the amount of currency. If you continue, the count will be 1",
+            message: "You are not using the amount of currency. Continue if you are interested in calculations to 1 conditional unit.",
             preferredStyle: .alert
         )
         

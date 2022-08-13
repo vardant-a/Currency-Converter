@@ -10,13 +10,10 @@ import UIKit
 class ConvectorViewController: UIViewController {
     
     var multiplier: Double!
-    var link = ""
-    var data = ExchangeRates.self
+    var data = [Rate]?.self
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Данные - \(multiplier ?? 0)")
-        print("ссылка - \(link)")
-        print(data)
+        print("Данные - \(multiplier ?? 1)")
     }
 }

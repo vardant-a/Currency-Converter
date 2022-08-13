@@ -12,6 +12,7 @@ struct Currency {
     let info: String
     let designation: String
     let image: String
+    let value: Double = 1
     
     static func getInfoList() -> [Currency] {
         var infoListOfСurrency: [Currency] = []

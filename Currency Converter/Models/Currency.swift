@@ -8,19 +8,25 @@
 import Foundation
 
 struct Currency {
+    let name: String
+    let info: String
     let designation: String
-    let description: String
     let image: String
     
     static func getInfoList() -> [Currency] {
         var infoListOfСurrency: [Currency] = []
-        let iterationCount = min(CurrencyDescription.shared.designations.count, CurrencyDescription.shared.descriptions.count)
+        let iterationCount = min(
+            CurrencyDescription.shared.named.count,
+            CurrencyDescription.shared.designations.count,
+            CurrencyDescription.shared.informations.count
+            )
         
         for index in 0..<iterationCount {
             infoListOfСurrency.append(
                 Currency(
+                    name: CurrencyDescription.shared.named[index],
+                    info: CurrencyDescription.shared.informations[index],
                     designation: CurrencyDescription.shared.designations[index],
-                    description: CurrencyDescription.shared.descriptions[index],
                     image: CurrencyDescription.shared.images[index]
                 )
             )

@@ -11,7 +11,7 @@ enum LinkCurrency: String {
     case usd = "https://open.er-api.com/v6/latest/USD"
     case eur = "https://open.er-api.com/v6/latest/EUR"
     case rub = "https://open.er-api.com/v6/latest/RUB"
-    case gpb = "https://open.er-api.com/v6/latest/GPB"
+    case gpb = "https://open.er-api.com/v6/latest/GBP"
     case jpy = "https://open.er-api.com/v6/latest/JPY"
 }
 

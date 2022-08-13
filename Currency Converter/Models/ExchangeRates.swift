@@ -10,17 +10,17 @@ import Foundation
 struct ExchangeRates: Decodable {
     let result: String
     let provider: String
-    let timeLastUpdateUnix: Int
+    let timeLastUpdateUtc: String
     let rates: Rate
     
     enum CodingKeys: String, CodingKey {
         case result, provider, rates
-        case timeLastUpdateUnix = "time_last_update_unix"
+        case timeLastUpdateUtc = "time_last_update_utc"
     }
 }
 
 struct Rate: Decodable {
-    let usd: Int
+    let usd: Double
     let eur: Double
     let rub: Double
     let gbp: Double

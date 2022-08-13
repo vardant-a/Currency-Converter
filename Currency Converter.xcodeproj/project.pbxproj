@@ -13,12 +13,12 @@
 		0E5F896628A546400019618E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F896528A546400019618E /* AppDelegate.swift */; };
 		0E5F896828A546400019618E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F896728A546400019618E /* SceneDelegate.swift */; };
 		0E5F896D28A546400019618E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5F896B28A546400019618E /* Main.storyboard */; };
-		0E5F896F28A546410019618E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5F896E28A546410019618E /* Assets.xcassets */; };
 		0E5F897228A546410019618E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5F897028A546410019618E /* LaunchScreen.storyboard */; };
 		0E5F898128A5480D0019618E /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F898028A5480D0019618E /* ExchangeRates.swift */; };
 		0E5F898328A5482F0019618E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F898228A5482F0019618E /* NetworkManager.swift */; };
 		0E5F898528A548BB0019618E /* СhoiceCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */; };
-		0EE64AE428A68C59004C1C30 /* СonvectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE64AE328A68C59004C1C30 /* СonvectorViewController.swift */; };
+		0E64119328A7DC4B00C96337 /* ConvectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E64119228A7DC4B00C96337 /* ConvectorViewController.swift */; };
+		0E64119528A8259900C96337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E64119428A8259900C96337 /* Assets.xcassets */; };
 		0EE64AE628A6918B004C1C30 /* ExchangeRatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE64AE528A6918B004C1C30 /* ExchangeRatesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,13 +30,13 @@
 		0E5F896528A546400019618E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E5F896728A546400019618E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0E5F896C28A546400019618E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0E5F896E28A546410019618E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E5F897128A546410019618E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E5F897328A546410019618E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E5F898028A5480D0019618E /* ExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
 		0E5F898228A5482F0019618E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СhoiceCurrencyViewController.swift"; sourceTree = "<group>"; };
-		0EE64AE328A68C59004C1C30 /* СonvectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СonvectorViewController.swift"; sourceTree = "<group>"; };
+		0E64119228A7DC4B00C96337 /* ConvectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvectorViewController.swift; sourceTree = "<group>"; };
+		0E64119428A8259900C96337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		0EE64AE528A6918B004C1C30 /* ExchangeRatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +112,6 @@
 			children = (
 				0E5F897E28A547150019618E /* DataStore */,
 				0E5F897F28A547220019618E /* NetworkManagers */,
-				0E5F896E28A546410019618E /* Assets.xcassets */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -121,9 +120,10 @@
 			isa = PBXGroup;
 			children = (
 				0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */,
-				0EE64AE328A68C59004C1C30 /* СonvectorViewController.swift */,
+				0E64119228A7DC4B00C96337 /* ConvectorViewController.swift */,
 				0EE64AE528A6918B004C1C30 /* ExchangeRatesViewController.swift */,
 				0E424F9628A5631F00E7DCDE /* InfoListViewController.swift */,
+				0E64119428A8259900C96337 /* Assets.xcassets */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E5F897228A546410019618E /* LaunchScreen.storyboard in Resources */,
-				0E5F896F28A546410019618E /* Assets.xcassets in Resources */,
+				0E64119528A8259900C96337 /* Assets.xcassets in Resources */,
 				0E5F896D28A546400019618E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E64119328A7DC4B00C96337 /* ConvectorViewController.swift in Sources */,
 				0E5F898328A5482F0019618E /* NetworkManager.swift in Sources */,
 				0E424F9528A54B2200E7DCDE /* CurrencyDescription.swift in Sources */,
 				0E424F9728A5631F00E7DCDE /* InfoListViewController.swift in Sources */,
@@ -224,7 +225,6 @@
 				0E5F898128A5480D0019618E /* ExchangeRates.swift in Sources */,
 				0EE64AE628A6918B004C1C30 /* ExchangeRatesViewController.swift in Sources */,
 				0E5F896828A546400019618E /* SceneDelegate.swift in Sources */,
-				0EE64AE428A68C59004C1C30 /* СonvectorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,14 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="S50-Ib-qj4">
-                                <rect key="frame" x="16" y="160.00000000000003" width="396" height="397.66666666666674"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dc5-Ih-8Sb">
+                                <rect key="frame" x="16" y="160.00000000000003" width="396" height="335.66666666666674"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1f50f877-128a-4058-ab8b-803c436ee6c1.jpg.850x445_q82_crop" translatesAutoresizingMaskIntoConstraints="NO" id="kuX-pK-Ph8">
-                                        <rect key="frame" x="0.0" y="0.0" width="396" height="150"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1f50f877-128a-4058-ab8b-803c436ee6c1.jpg.850x445_q82_crop" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-7j-182">
+                                        <rect key="frame" x="0.0" y="0.0" width="396" height="128"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="gJ9-fe-8My"/>
-                                            <constraint firstAttribute="height" constant="150" id="sr3-ye-YHp"/>
+                                            <constraint firstAttribute="height" constant="128" id="9Fk-Tx-4d9"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -32,14 +31,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the currency you want to transfer to another" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVu-Sc-3uA">
-                                        <rect key="frame" x="0.0" y="162" width="396" height="57.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="144" width="396" height="57.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fgv-BQ-Rkb">
-                                        <rect key="frame" x="0.0" y="231.33333333333331" width="396" height="41"/>
+                                        <rect key="frame" x="0.0" y="217.33333333333331" width="396" height="49"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="0Nm-yx-6bc"/>
+                                            <constraint firstAttribute="height" constant="48" id="0Nm-yx-6bc"/>
                                         </constraints>
                                         <segments>
                                             <segment title="USD"/>
@@ -48,24 +47,20 @@
                                             <segment title="GBP"/>
                                             <segment title="JPY"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="setSelectionCurrency" destination="O7X-9W-iKY" eventType="valueChanged" id="Snp-HQ-E60"/>
+                                        </connections>
                                     </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XL6-nG-7FZ">
-                                        <rect key="frame" x="0.0" y="283.33333333333331" width="396" height="114.33333333333331"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="jT6-s0-RZN">
+                                        <rect key="frame" x="0.0" y="281.33333333333331" width="396" height="54.333333333333314"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity у.e." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3g-7x-pmD">
-                                                <rect key="frame" x="0.0" y="23" width="200" height="68"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="kY9-Zs-wy0"/>
-                                                    <constraint firstAttribute="height" constant="68" id="nW8-i0-iSZ"/>
-                                                </constraints>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Quantity у.e." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3g-7x-pmD">
+                                                <rect key="frame" x="0.0" y="0.0" width="277.66666666666669" height="54.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" keyboardAppearance="light" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd5-Ku-MAm">
-                                                <rect key="frame" x="220" y="23" width="176" height="68"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="68" id="JaL-hP-doO"/>
-                                                </constraints>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd5-Ku-MAm">
+                                                <rect key="frame" x="295.66666666666669" y="0.0" width="100.33333333333331" height="54.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Translate">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
@@ -82,10 +77,10 @@
                         <viewLayoutGuide key="safeArea" id="6kZ-3e-Ida"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6kZ-3e-Ida" firstAttribute="bottom" secondItem="S50-Ib-qj4" secondAttribute="bottom" multiplier="1.6" id="QFO-tJ-fPW"/>
-                            <constraint firstItem="S50-Ib-qj4" firstAttribute="leading" secondItem="6kZ-3e-Ida" secondAttribute="leading" constant="16" id="f4i-R1-yNv"/>
-                            <constraint firstItem="S50-Ib-qj4" firstAttribute="top" secondItem="6kZ-3e-Ida" secondAttribute="top" constant="20" id="s6C-Ut-QyL"/>
-                            <constraint firstItem="6kZ-3e-Ida" firstAttribute="trailing" secondItem="S50-Ib-qj4" secondAttribute="trailing" constant="16" id="sDh-TS-Qc3"/>
+                            <constraint firstAttribute="trailing" secondItem="dc5-Ih-8Sb" secondAttribute="trailing" constant="16" id="0uc-xJ-gs6"/>
+                            <constraint firstItem="dc5-Ih-8Sb" firstAttribute="leading" secondItem="6kZ-3e-Ida" secondAttribute="leading" constant="16" id="Olz-mi-115"/>
+                            <constraint firstItem="6kZ-3e-Ida" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="dc5-Ih-8Sb" secondAttribute="bottom" multiplier="1.8" id="gd2-yM-EF1"/>
+                            <constraint firstItem="dc5-Ih-8Sb" firstAttribute="top" secondItem="6kZ-3e-Ida" secondAttribute="top" constant="20" id="jD3-c4-qrn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Сurrency selection" id="zvg-CB-2WQ">
@@ -93,6 +88,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="multiplierTF" destination="f3g-7x-pmD" id="Iwc-Mq-oS1"/>
+                        <outlet property="selectionCurrency" destination="Fgv-BQ-Rkb" id="JbD-EW-ft6"/>
                         <segue destination="N0A-IV-WV8" kind="show" identifier="showTabBar" id="Vxz-zu-93T"/>
                     </connections>
                 </viewController>
@@ -129,12 +125,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlc-NI-NJs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="-597"/>
+            <point key="canvasLocation" x="1968" y="-560"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Exchange Rates-->
         <scene sceneID="QqE-Uu-Gbr">
             <objects>
-                <tableViewController id="hCW-Dn-gCh" customClass="ExchangeRatesViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="hCW-Dn-gCh" customClass="ExchangeRatesViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="MkI-BJ-4Td">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,28 +151,50 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Exchange rates" image="chart.line.uptrend.xyaxis" catalog="system" id="Oxs-yW-u0M"/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="bhA-OK-eEv"/>
+                    <navigationItem key="navigationItem" title="Exchange Rates" id="bhA-OK-eEv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERY-SO-e3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1622" y="805"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Convector-->
         <scene sceneID="rHP-ne-7bD">
             <objects>
-                <viewController id="qxa-nH-GPc" sceneMemberID="viewController">
+                <viewController id="qxa-nH-GPc" customClass="ConvectorViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g9f-bO-5YW">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1iV-Mi-uGh">
+                                <rect key="frame" x="0.0" y="140" width="428" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Z47-rT-mlL">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z47-rT-mlL" id="fdd-Lk-AhP">
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bjr-ok-8AV"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1iV-Mi-uGh" firstAttribute="leading" secondItem="bjr-ok-8AV" secondAttribute="leading" id="T8j-Dc-EhH"/>
+                            <constraint firstItem="1iV-Mi-uGh" firstAttribute="trailing" secondItem="bjr-ok-8AV" secondAttribute="trailing" id="pgw-iW-jRJ"/>
+                            <constraint firstItem="1iV-Mi-uGh" firstAttribute="bottom" secondItem="bjr-ok-8AV" secondAttribute="bottom" id="r8Z-Uq-RDH"/>
+                            <constraint firstItem="1iV-Mi-uGh" firstAttribute="top" secondItem="bjr-ok-8AV" secondAttribute="top" id="sNR-aJ-LwG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Сonvector" image="arrow.up.right.and.arrow.down.left.rectangle" catalog="system" id="PaP-M5-gD9"/>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="qKE-pi-sT2"/>
+                    <navigationItem key="navigationItem" title="Convector" id="qKE-pi-sT2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3d-5T-rjT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682.71028037383178" y="804.75161987041042"/>
+            <point key="canvasLocation" x="792" y="805"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="WyH-my-zig">
@@ -229,9 +247,6 @@
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

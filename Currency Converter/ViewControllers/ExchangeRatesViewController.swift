@@ -9,11 +9,12 @@ import UIKit
 
 class ExchangeRatesViewController: UITableViewController {
     
-    var multiplier = 0
+    var multiplier: Double!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "test 2"
+        print("Данные \(multiplier ?? 0)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,15 +24,13 @@ class ExchangeRatesViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        2
+//    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 5
+//    }
 
     
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -17,7 +17,7 @@ class ExchangeRatesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Данные \(multiplier ?? 0)")
+        print("Множитель \(multiplier ?? 0)")
         tableView.rowHeight = 90
     }
     

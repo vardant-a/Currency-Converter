@@ -49,6 +49,7 @@ class СhoiceCurrencyViewController: UIViewController {
         guard let tabbarVC = segue.destination as? UITabBarController else { return }
         guard let convectorVC = tabbarVC.viewControllers?.first as? ConvectorViewController else { return }
         convectorVC.multiplier = multiplier
+        convectorVC.indexCurrency = indexCurrency
         
         guard let exchangeRatesVC = tabbarVC.viewControllers?.last as? ExchangeRatesViewController else { return }
         exchangeRatesVC.multiplier = multiplier

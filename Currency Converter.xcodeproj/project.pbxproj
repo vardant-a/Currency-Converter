@@ -19,6 +19,7 @@
 		0E5F898528A548BB0019618E /* СhoiceCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */; };
 		0E64119328A7DC4B00C96337 /* ConvectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E64119228A7DC4B00C96337 /* ConvectorViewController.swift */; };
 		0E64119728A830FA00C96337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E64119628A830FA00C96337 /* Assets.xcassets */; };
+		0EC8270F28A84E430007383C /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8270E28A84E430007383C /* CurrencyTableViewCell.swift */; };
 		0EE64AE628A6918B004C1C30 /* ExchangeRatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE64AE528A6918B004C1C30 /* ExchangeRatesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СhoiceCurrencyViewController.swift"; sourceTree = "<group>"; };
 		0E64119228A7DC4B00C96337 /* ConvectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvectorViewController.swift; sourceTree = "<group>"; };
 		0E64119628A830FA00C96337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0EC8270E28A84E430007383C /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		0EE64AE528A6918B004C1C30 /* ExchangeRatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,7 +56,6 @@
 		0E5F895928A546400019618E = {
 			isa = PBXGroup;
 			children = (
-				0E64119628A830FA00C96337 /* Assets.xcassets */,
 				0E5F896428A546400019618E /* Currency Converter */,
 				0E5F896328A546400019618E /* Products */,
 			);
@@ -111,6 +112,7 @@
 		0E5F897C28A546A50019618E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0E64119628A830FA00C96337 /* Assets.xcassets */,
 				0E5F897E28A547150019618E /* DataStore */,
 				0E5F897F28A547220019618E /* NetworkManagers */,
 			);
@@ -120,6 +122,7 @@
 		0E5F897D28A546E50019618E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0EC8270D28A84DFA0007383C /* Views */,
 				0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */,
 				0E64119228A7DC4B00C96337 /* ConvectorViewController.swift */,
 				0EE64AE528A6918B004C1C30 /* ExchangeRatesViewController.swift */,
@@ -142,6 +145,14 @@
 				0E5F898228A5482F0019618E /* NetworkManager.swift */,
 			);
 			path = NetworkManagers;
+			sourceTree = "<group>";
+		};
+		0EC8270D28A84DFA0007383C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0EC8270E28A84E430007383C /* CurrencyTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 				0E424F9528A54B2200E7DCDE /* CurrencyDescription.swift in Sources */,
 				0E424F9728A5631F00E7DCDE /* InfoListViewController.swift in Sources */,
 				0E5F898528A548BB0019618E /* СhoiceCurrencyViewController.swift in Sources */,
+				0EC8270F28A84E430007383C /* CurrencyTableViewCell.swift in Sources */,
 				0E424F9928A56A7D00E7DCDE /* Currency.swift in Sources */,
 				0E5F896628A546400019618E /* AppDelegate.swift in Sources */,
 				0E5F898128A5480D0019618E /* ExchangeRates.swift in Sources */,

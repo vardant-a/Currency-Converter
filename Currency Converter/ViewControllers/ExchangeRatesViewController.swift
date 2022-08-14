@@ -11,14 +11,18 @@ class ExchangeRatesViewController: UITableViewController {
     
     var multiplier: Double!
     var indexCurrency: Int!
+    var valueCurrency = Rate(usd: 0, eur: 0, rub: 0, gbp: 0, jpy: 0)
     
     private var valueList = Currency.getInfoList()
-    private var currencyValues: [Double] = [0.1111, 0.2222, 0.3333, 0.4444, 0.5555]
+    private var currencyValues: [Double] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Множитель \(multiplier ?? 0)")
         tableView.rowHeight = 90
+        
+        getValueList()
+        print(valueCurrency)
     }
     
     // MARK: - Table view data source
@@ -44,6 +48,17 @@ class ExchangeRatesViewController: UITableViewController {
 }
 
 extension ExchangeRatesViewController {
+    
+    private func getValueList() {
+        /* не хватило мозгов, чтобы добавить не в ручную, если подскажите куда копать,
+         чтобы можно было не вручную добавлять свойства экземпляра в цикл - буду признателен.
+         */
+        currencyValues.append(valueCurrency.usd)
+        currencyValues.append(valueCurrency.eur)
+        currencyValues.append(valueCurrency.rub)
+        currencyValues.append(valueCurrency.gbp)
+        currencyValues.append(valueCurrency.jpy)
+    }
     
     // MARK: - Navigation
     

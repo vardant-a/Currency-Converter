@@ -11,7 +11,6 @@ class InfoListViewController: UITableViewController {
 
     private var infoList = Currency.getInfoList()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 90

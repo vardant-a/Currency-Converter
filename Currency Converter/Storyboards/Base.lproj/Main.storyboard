@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Сurrency selection-->
+        <!--Выбор валюты-->
         <scene sceneID="3bQ-2R-7Cr">
             <objects>
                 <viewController id="O7X-9W-iKY" customClass="СhoiceCurrencyViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the currency you want to transfer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVu-Sc-3uA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите валюту, которую вам необходимо перевести" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVu-Sc-3uA">
                                         <rect key="frame" x="0.0" y="144" width="396" height="81.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
                                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="jT6-s0-RZN">
                                         <rect key="frame" x="0.0" y="293.66666666666669" width="396" height="42"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the amount of currency" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3g-7x-pmD">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите количество валюты" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3g-7x-pmD">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="220" id="XWs-Bw-U61"/>
@@ -68,7 +68,7 @@
                                                     <constraint firstAttribute="height" constant="42" id="Rcy-k7-igT"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Convert">
+                                                <buttonConfiguration key="configuration" style="filled" title="Перевести">
                                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -79,18 +79,27 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Данные отображаются корректно только после 2 перехода, подскажите куда копать(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDr-r8-kQv">
+                                <rect key="frame" x="16" y="568" width="396" height="344"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6kZ-3e-Ida"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dc5-Ih-8Sb" secondAttribute="trailing" constant="16" id="0uc-xJ-gs6"/>
                             <constraint firstItem="dc5-Ih-8Sb" firstAttribute="leading" secondItem="6kZ-3e-Ida" secondAttribute="leading" constant="16" id="Olz-mi-115"/>
+                            <constraint firstItem="SDr-r8-kQv" firstAttribute="leading" secondItem="6kZ-3e-Ida" secondAttribute="leading" constant="16" id="Pga-xP-cRq"/>
+                            <constraint firstItem="6kZ-3e-Ida" firstAttribute="trailing" secondItem="SDr-r8-kQv" secondAttribute="trailing" constant="16" id="Rwk-ZA-mWt"/>
+                            <constraint firstItem="SDr-r8-kQv" firstAttribute="bottom" secondItem="6kZ-3e-Ida" secondAttribute="bottom" constant="20" id="aNa-Sx-gL0"/>
                             <constraint firstItem="6kZ-3e-Ida" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="dc5-Ih-8Sb" secondAttribute="bottom" multiplier="1.8" id="gd2-yM-EF1"/>
                             <constraint firstItem="dc5-Ih-8Sb" firstAttribute="top" secondItem="6kZ-3e-Ida" secondAttribute="top" constant="20" id="jD3-c4-qrn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Сurrency selection" id="zvg-CB-2WQ">
-                        <barButtonItem key="backBarButtonItem" title="Back to currency selection" id="ouz-jw-wnZ"/>
+                    <navigationItem key="navigationItem" title="Выбор валюты" id="zvg-CB-2WQ">
+                        <barButtonItem key="backBarButtonItem" title="Вернуться к выбору валюты" id="ouz-jw-wnZ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="imageCurrency" destination="gBb-7j-182" id="D3Q-rq-Al8"/>
@@ -101,9 +110,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xaK-r8-96b" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="416" y="80"/>
+            <point key="canvasLocation" x="414.95327102803736" y="79.697624190064801"/>
         </scene>
-        <!--Description-->
+        <!--Информация о валюте-->
         <scene sceneID="Grr-qq-llb">
             <objects>
                 <tableViewController id="2T6-HL-h2M" customClass="InfoListViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,7 +136,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Description" id="SjR-TE-m4K"/>
+                    <navigationItem key="navigationItem" title="Информация о валюте" id="SjR-TE-m4K"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlc-NI-NJs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,7 +166,7 @@
                             <outlet property="delegate" destination="hCW-Dn-gCh" id="shZ-cD-uYh"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Exchange rates" image="chart.line.uptrend.xyaxis" catalog="system" id="Oxs-yW-u0M"/>
+                    <tabBarItem key="tabBarItem" title="Курс валют" image="chart.line.uptrend.xyaxis" catalog="system" id="Oxs-yW-u0M"/>
                     <navigationItem key="navigationItem" title="Exchange Rate" id="bhA-OK-eEv"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERY-SO-e3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -183,66 +192,51 @@
                                             <rect key="frame" x="0.0" y="0.0" width="428" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="81" translatesAutoresizingMaskIntoConstraints="NO" id="VPs-Kd-798">
-                                                    <rect key="frame" x="8" y="8" width="412" height="104"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="cNd-Qw-eKp">
+                                                    <rect key="frame" x="28" y="19" width="372" height="82"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="89" translatesAutoresizingMaskIntoConstraints="NO" id="R3o-bR-Vkx">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="104"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N78-DK-ztM">
+                                                            <rect key="frame" x="0.0" y="1" width="80" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="NrP-5f-jsS"/>
+                                                                <constraint firstAttribute="height" constant="80" id="Qf5-3Q-96P"/>
+                                                                <constraint firstAttribute="width" secondItem="N78-DK-ztM" secondAttribute="height" multiplier="1:1" id="rFK-Hz-A91"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="iAc-GX-eFs">
+                                                            <rect key="frame" x="104" y="0.0" width="268" height="82"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="krf-uv-HFc">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="104"/>
-                                                                    <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IW8-90-4Fp">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="104"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" secondItem="IW8-90-4Fp" secondAttribute="height" multiplier="1:1" id="3BV-Fn-6Xp"/>
-                                                                                <constraint firstAttribute="height" constant="100" id="ph4-FT-okx"/>
-                                                                                <constraint firstAttribute="width" constant="100" id="xMS-9m-JIq"/>
-                                                                            </constraints>
-                                                                        </imageView>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="GTw-B5-Wf4">
-                                                            <rect key="frame" x="181" y="0.0" width="41.333333333333343" height="104"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9w9-BO-mCX">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="28.666666666666668"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47X-Od-W5g">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="268" height="16"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDt-Wl-rmS">
-                                                                    <rect key="frame" x="0.0" y="83.666666666666671" width="41.333333333333336" height="20.333333333333329"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHe-UZ-6lQ">
+                                                                    <rect key="frame" x="0.0" y="40" width="268" height="42"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="42" id="8ma-1z-3Xw"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IC-w8-mcL">
-                                                            <rect key="frame" x="303.33333333333331" y="0.0" width="108.66666666666669" height="104"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="filled" title="Convert"/>
-                                                            <connections>
-                                                                <action selector="tuppedButtonConvect" destination="qxa-nH-GPc" eventType="touchUpInside" id="dd7-uA-dTk"/>
-                                                            </connections>
-                                                        </button>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="VPs-Kd-798" firstAttribute="leading" secondItem="fdd-Lk-AhP" secondAttribute="leading" constant="8" id="FFz-mh-MNi"/>
-                                                <constraint firstAttribute="trailing" secondItem="VPs-Kd-798" secondAttribute="trailing" constant="8" id="Mpj-mX-EmD"/>
-                                                <constraint firstAttribute="bottom" secondItem="VPs-Kd-798" secondAttribute="bottom" constant="8" id="o8G-fx-ejL"/>
-                                                <constraint firstItem="VPs-Kd-798" firstAttribute="top" secondItem="fdd-Lk-AhP" secondAttribute="top" constant="8" id="q3m-Ku-FVB"/>
+                                                <constraint firstItem="cNd-Qw-eKp" firstAttribute="leading" secondItem="fdd-Lk-AhP" secondAttribute="leadingMargin" constant="8" id="9CK-WY-EWO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cNd-Qw-eKp" secondAttribute="trailing" constant="8" id="ZRK-k8-Hww"/>
+                                                <constraint firstItem="cNd-Qw-eKp" firstAttribute="top" secondItem="fdd-Lk-AhP" secondAttribute="topMargin" constant="8" id="hkv-5m-K6z"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cNd-Qw-eKp" secondAttribute="bottom" constant="8" id="tSg-jl-E6e"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="descriptionLabel" destination="WDt-Wl-rmS" id="kbD-2s-lCB"/>
-                                            <outlet property="nameLabel" destination="9w9-BO-mCX" id="r8v-hs-qyz"/>
+                                            <outlet property="descriptionLabel" destination="uHe-UZ-6lQ" id="SqH-YU-VkW"/>
+                                            <outlet property="imageFlagCurrency" destination="N78-DK-ztM" id="YfD-2k-zDR"/>
+                                            <outlet property="nameLabel" destination="47X-Od-W5g" id="sB3-SO-gkl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -257,7 +251,7 @@
                             <constraint firstItem="1iV-Mi-uGh" firstAttribute="top" secondItem="bjr-ok-8AV" secondAttribute="top" id="mHn-vP-It9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Сonvector" image="arrow.up.right.and.arrow.down.left.rectangle" catalog="system" id="PaP-M5-gD9"/>
+                    <tabBarItem key="tabBarItem" title="Ковертирование валюты" image="arrow.up.right.and.arrow.down.left.rectangle" catalog="system" id="PaP-M5-gD9"/>
                     <navigationItem key="navigationItem" title="Convector" id="qKE-pi-sT2"/>
                     <connections>
                         <outlet property="tableView" destination="1iV-Mi-uGh" id="Qr4-tW-Ypg"/>

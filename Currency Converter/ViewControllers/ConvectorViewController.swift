@@ -13,7 +13,10 @@ class ConvectorViewController: UIViewController {
     
     var multiplier: Double!
     var indexCurrency: Int!
-    var data = [Rate]?.self
+    var valueCurrency = Rate(usd: 0, eur: 0, rub: 0, gbp: 0, jpy: 0)
+    
+    private var valueList = Currency.getInfoList()
+    private var currencyValues: [Double] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,32 +26,52 @@ class ConvectorViewController: UIViewController {
         
         print("Множитель - \(multiplier ?? 1)")
         print("Индекс - \(indexCurrency ?? 0)")
-    }
-    
-    @IBAction func tuppedButtonConvect() {
-        showAlert()
+        getValueList()
+        
     }
     
 }
 
 extension ConvectorViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        currencyValues.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyTableViewCell") as! CurrencyTableViewCell
-        cell.nameLabel.text = "test"
-        cell.descriptionLabel.text = "test 2"
+        let currency = valueList[indexPath.row]
+
+        cell.nameLabel.text = currency.name
+        cell.descriptionLabel.text = "Обменять \(multiplier ?? 1) \(valueList[indexCurrency].name) на \(String(format: "%.2f", multiplier * currencyValues[indexPath.row])) \(currency.name)"
+        cell.imageFlagCurrency.image = UIImage(named: currency.image)
+        cell.imageFlagCurrency.layer.cornerRadius = 40
+
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        showAlert()
     }
     
 }
 extension ConvectorViewController {
+    
+    private func getValueList() {
+        /* не хватило мозгов, чтобы добавить не в ручную, если подскажите куда копать,
+         чтобы можно было не вручную добавлять свойства экземпляра в цикл - буду признателен.
+         */
+        currencyValues.append(valueCurrency.usd)
+        currencyValues.append(valueCurrency.eur)
+        currencyValues.append(valueCurrency.rub)
+        currencyValues.append(valueCurrency.gbp)
+        currencyValues.append(valueCurrency.jpy)
+    }
+    
     private func showAlert() {
         let alert = UIAlertController(
-            title: "Warning",
-            message: "Make a currency exchange?",
+            title: "Внимание",
+            message: "Произвести конвертирование?",
             preferredStyle: .alert
         )
         let okAction = UIAlertAction(
@@ -57,7 +80,7 @@ extension ConvectorViewController {
             handler: nil
         )
         let cancelAction = UIAlertAction(
-            title: "Cancel",
+            title: "Отмена",
             style: .destructive,
             handler: nil
         )

@@ -19,6 +19,7 @@ class СhoiceCurrencyViewController: UIViewController {
     
     var multiplier: Double = 0
     var indexCurrency = 0
+    var valueCurrency = Rate(usd: 0, eur: 0, rub: 0, gbp: 0, jpy: 0)
     
     // MARK: Private Properties
     
@@ -37,23 +38,17 @@ class СhoiceCurrencyViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        NetworkManager.shared.fetch(ExchangeRates.self, from: link) { result in
-            switch result {
-            case .success(let jsonData):
-                print(jsonData)
-            case .failure(let error):
-                print(error)
-            }
-        }
         
         guard let tabbarVC = segue.destination as? UITabBarController else { return }
         guard let convectorVC = tabbarVC.viewControllers?.first as? ConvectorViewController else { return }
         convectorVC.multiplier = multiplier
         convectorVC.indexCurrency = indexCurrency
+        convectorVC.valueCurrency = valueCurrency
         
         guard let exchangeRatesVC = tabbarVC.viewControllers?.last as? ExchangeRatesViewController else { return }
         exchangeRatesVC.multiplier = multiplier
         exchangeRatesVC.indexCurrency = indexCurrency
+        exchangeRatesVC.valueCurrency = valueCurrency
     }
     
     // MARK: - IB Actions
@@ -82,7 +77,6 @@ class СhoiceCurrencyViewController: UIViewController {
             imageCurrency.image = UIImage(named: valueList[indexCurrency].image)
             link = LinkCurrency.jpy.rawValue
         }
-        print(link)
     }
 
     
@@ -93,6 +87,17 @@ class СhoiceCurrencyViewController: UIViewController {
             showAlert()
             return
         }
+        
+        NetworkManager.shared.fetch(ExchangeRates.self, from: link) { result in
+            switch result {
+            case .success(let jsonData):
+                self.valueCurrency = jsonData.rates
+                print(self.valueCurrency)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
         performSegue(withIdentifier: "showTabBar", sender: nil)
     }
     
@@ -111,13 +116,13 @@ extension СhoiceCurrencyViewController {
     
     private func showAlert() {
         let alert = UIAlertController(
-            title: "Warning",
-            message: "You are not using the amount of currency. Continue if you are interested in calculations to 1 conditional unit.",
+            title: "Предупреждение",
+            message: "Вы не указали колличество валюты. Продолжая, расчёты будут вестись для 1 условной единицы",
             preferredStyle: .alert
         )
         
         let nextAction = UIAlertAction(
-            title: "Proceed",
+            title: "Продолжить",
             style: .default,
             handler: { _ in
                 self.multiplier = 1
@@ -125,7 +130,7 @@ extension СhoiceCurrencyViewController {
             }
         )
         let cancelAction = UIAlertAction(
-            title: "Cancel",
+            title: "Отмена",
             style: .destructive,
             handler: { _ in
                 self.multiplierTF.text = ""

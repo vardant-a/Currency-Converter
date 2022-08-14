@@ -80,8 +80,8 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Данные отображаются корректно только после 2 перехода, подскажите куда копать(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDr-r8-kQv">
-                                <rect key="frame" x="16" y="568" width="396" height="344"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <rect key="frame" x="16" y="685" width="396" height="227"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -94,9 +94,15 @@
                             <constraint firstItem="SDr-r8-kQv" firstAttribute="leading" secondItem="6kZ-3e-Ida" secondAttribute="leading" constant="16" id="Pga-xP-cRq"/>
                             <constraint firstItem="6kZ-3e-Ida" firstAttribute="trailing" secondItem="SDr-r8-kQv" secondAttribute="trailing" constant="16" id="Rwk-ZA-mWt"/>
                             <constraint firstItem="SDr-r8-kQv" firstAttribute="bottom" secondItem="6kZ-3e-Ida" secondAttribute="bottom" constant="20" id="aNa-Sx-gL0"/>
+                            <constraint firstItem="SDr-r8-kQv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dc5-Ih-8Sb" secondAttribute="bottom" constant="20" id="dxe-EC-vSg"/>
                             <constraint firstItem="6kZ-3e-Ida" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="dc5-Ih-8Sb" secondAttribute="bottom" multiplier="1.8" id="gd2-yM-EF1"/>
                             <constraint firstItem="dc5-Ih-8Sb" firstAttribute="top" secondItem="6kZ-3e-Ida" secondAttribute="top" constant="20" id="jD3-c4-qrn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="SDr-r8-kQv"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Выбор валюты" id="zvg-CB-2WQ">
                         <barButtonItem key="backBarButtonItem" title="Вернуться к выбору валюты" id="ouz-jw-wnZ"/>

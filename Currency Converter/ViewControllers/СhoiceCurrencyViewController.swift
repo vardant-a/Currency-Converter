@@ -39,6 +39,16 @@ class СhoiceCurrencyViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        NetworkManager.shared.fetch(ExchangeRates.self, from: link) { result in
+            switch result {
+            case .success(let jsonData):
+                self.valueCurrency = jsonData.rates
+                print(self.valueCurrency)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
         guard let tabbarVC = segue.destination as? UITabBarController else { return }
         guard let convectorVC = tabbarVC.viewControllers?.first as? ConvectorViewController else { return }
         convectorVC.multiplier = multiplier
@@ -88,15 +98,7 @@ class СhoiceCurrencyViewController: UIViewController {
             return
         }
         
-        NetworkManager.shared.fetch(ExchangeRates.self, from: link) { result in
-            switch result {
-            case .success(let jsonData):
-                self.valueCurrency = jsonData.rates
-                print(self.valueCurrency)
-            case .failure(let error):
-                print(error)
-            }
-        }
+
         
         performSegue(withIdentifier: "showTabBar", sender: nil)
     }

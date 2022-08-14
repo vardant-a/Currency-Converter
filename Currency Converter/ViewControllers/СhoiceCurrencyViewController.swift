@@ -97,9 +97,7 @@ class СhoiceCurrencyViewController: UIViewController {
             showAlert()
             return
         }
-        
 
-        
         performSegue(withIdentifier: "showTabBar", sender: nil)
     }
     

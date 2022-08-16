@@ -23,6 +23,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="396" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="9Fk-Tx-4d9"/>
+                                            <constraint firstAttribute="width" constant="396" id="r5Y-Si-eFw"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -32,7 +33,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите валюту, которую вам необходимо перевести" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVu-Sc-3uA">
                                         <rect key="frame" x="0.0" y="144" width="396" height="81.666666666666686"/>
-                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="27"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fgv-BQ-Rkb">
@@ -41,11 +42,11 @@
                                             <constraint firstAttribute="height" constant="36" id="0Nm-yx-6bc"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="USD"/>
-                                            <segment title="EUR"/>
-                                            <segment title="RUB"/>
-                                            <segment title="GBP"/>
-                                            <segment title="JPY"/>
+                                            <segment title="USD - $"/>
+                                            <segment title="EUR - €"/>
+                                            <segment title="RUS - ₽"/>
+                                            <segment title="GBP - £"/>
+                                            <segment title="JPY - ¥"/>
                                         </segments>
                                         <connections>
                                             <action selector="setSelectionCurrency" destination="O7X-9W-iKY" eventType="valueChanged" id="Snp-HQ-E60"/>
@@ -79,30 +80,15 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Данные отображаются корректно только после 2 перехода, подскажите куда копать(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDr-r8-kQv">
-                                <rect key="frame" x="16" y="685" width="396" height="227"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6kZ-3e-Ida"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dc5-Ih-8Sb" secondAttribute="trailing" constant="16" id="0uc-xJ-gs6"/>
                             <constraint firstItem="dc5-Ih-8Sb" firstAttribute="leading" secondItem="6kZ-3e-Ida" secondAttribute="leading" constant="16" id="Olz-mi-115"/>
-                            <constraint firstItem="SDr-r8-kQv" firstAttribute="leading" secondItem="6kZ-3e-Ida" secondAttribute="leading" constant="16" id="Pga-xP-cRq"/>
-                            <constraint firstItem="6kZ-3e-Ida" firstAttribute="trailing" secondItem="SDr-r8-kQv" secondAttribute="trailing" constant="16" id="Rwk-ZA-mWt"/>
-                            <constraint firstItem="SDr-r8-kQv" firstAttribute="bottom" secondItem="6kZ-3e-Ida" secondAttribute="bottom" constant="20" id="aNa-Sx-gL0"/>
-                            <constraint firstItem="SDr-r8-kQv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dc5-Ih-8Sb" secondAttribute="bottom" constant="20" id="dxe-EC-vSg"/>
                             <constraint firstItem="6kZ-3e-Ida" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="dc5-Ih-8Sb" secondAttribute="bottom" multiplier="1.8" id="gd2-yM-EF1"/>
                             <constraint firstItem="dc5-Ih-8Sb" firstAttribute="top" secondItem="6kZ-3e-Ida" secondAttribute="top" constant="20" id="jD3-c4-qrn"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="SDr-r8-kQv"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Выбор валюты" id="zvg-CB-2WQ">
                         <barButtonItem key="backBarButtonItem" title="Вернуться к выбору валюты" id="ouz-jw-wnZ"/>

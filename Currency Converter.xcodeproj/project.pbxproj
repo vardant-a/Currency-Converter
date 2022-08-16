@@ -15,15 +15,16 @@
 		0E4E8CE828ABE22400673405 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E8CE728ABE22400673405 /* RatesViewController.swift */; };
 		0E4E8CEA28ABEF2400673405 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E8CE928ABEF2400673405 /* User.swift */; };
 		0E4E8CEC28AC03E700673405 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E8CEB28AC03E700673405 /* DescriptionViewController.swift */; };
+		0E4E8CEE28AC112F00673405 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E8CED28AC112F00673405 /* ProfileViewController.swift */; };
+		0E4E8CF128AC1B3E00673405 /* CollectionCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E8CF028AC1B3E00673405 /* CollectionCardViewController.swift */; };
+		0E4E8CF328AC22DC00673405 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E8CF228AC22DC00673405 /* CardCollectionViewCell.swift */; };
 		0E5F896628A546400019618E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F896528A546400019618E /* AppDelegate.swift */; };
 		0E5F896828A546400019618E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F896728A546400019618E /* SceneDelegate.swift */; };
 		0E5F896D28A546400019618E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5F896B28A546400019618E /* Main.storyboard */; };
 		0E5F897228A546410019618E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5F897028A546410019618E /* LaunchScreen.storyboard */; };
 		0E5F898128A5480D0019618E /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F898028A5480D0019618E /* ExchangeRates.swift */; };
 		0E5F898328A5482F0019618E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F898228A5482F0019618E /* NetworkManager.swift */; };
-		0E5F898528A548BB0019618E /* СhoiceCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */; };
 		0E64119728A830FA00C96337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E64119628A830FA00C96337 /* Assets.xcassets */; };
-		0EC8270F28A84E430007383C /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC8270E28A84E430007383C /* CurrencyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,9 @@
 		0E4E8CE728ABE22400673405 /* RatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		0E4E8CE928ABEF2400673405 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0E4E8CEB28AC03E700673405 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		0E4E8CED28AC112F00673405 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0E4E8CF028AC1B3E00673405 /* CollectionCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCardViewController.swift; sourceTree = "<group>"; };
+		0E4E8CF228AC22DC00673405 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E5F896228A546400019618E /* Currency Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Currency Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5F896528A546400019618E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E5F896728A546400019618E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,9 +46,7 @@
 		0E5F897328A546410019618E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E5F898028A5480D0019618E /* ExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
 		0E5F898228A5482F0019618E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СhoiceCurrencyViewController.swift"; sourceTree = "<group>"; };
 		0E64119628A830FA00C96337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0EC8270E28A84E430007383C /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,10 +133,11 @@
 			isa = PBXGroup;
 			children = (
 				0EC8270D28A84DFA0007383C /* Views */,
-				0E5F898428A548BB0019618E /* СhoiceCurrencyViewController.swift */,
+				0E4E8CF028AC1B3E00673405 /* CollectionCardViewController.swift */,
 				0E4E8CE328ABD57400673405 /* CardViewController.swift */,
 				0E4E8CEB28AC03E700673405 /* DescriptionViewController.swift */,
 				0E4E8CE728ABE22400673405 /* RatesViewController.swift */,
+				0E4E8CED28AC112F00673405 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -158,7 +161,7 @@
 		0EC8270D28A84DFA0007383C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0EC8270E28A84E430007383C /* CurrencyTableViewCell.swift */,
+				0E4E8CF228AC22DC00673405 /* CardCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,8 +247,9 @@
 				0E424F9528A54B2200E7DCDE /* CurrencyDescription.swift in Sources */,
 				0E4E8CEC28AC03E700673405 /* DescriptionViewController.swift in Sources */,
 				0E4E8CD828ABAFB900673405 /* Card.swift in Sources */,
-				0E5F898528A548BB0019618E /* СhoiceCurrencyViewController.swift in Sources */,
-				0EC8270F28A84E430007383C /* CurrencyTableViewCell.swift in Sources */,
+				0E4E8CF328AC22DC00673405 /* CardCollectionViewCell.swift in Sources */,
+				0E4E8CEE28AC112F00673405 /* ProfileViewController.swift in Sources */,
+				0E4E8CF128AC1B3E00673405 /* CollectionCardViewController.swift in Sources */,
 				0E424F9928A56A7D00E7DCDE /* Currency.swift in Sources */,
 				0E5F896628A546400019618E /* AppDelegate.swift in Sources */,
 				0E5F898128A5480D0019618E /* ExchangeRates.swift in Sources */,

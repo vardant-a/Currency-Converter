@@ -29,19 +29,19 @@ class RatesViewController: UITableViewController {
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ratesCell", for: indexPath)
-        let card = testCard[indexPath.row]
-        var contentCell = cell.defaultContentConfiguration()
-        
-        
-//        contentCell.image = UIImage(named: card.mainImage)
-        contentCell.text = card.bank
-        contentCell.secondaryText = card.date
-        
-        cell.contentConfiguration = contentCell
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "ratesCell", for: indexPath)
+//        let card = testCard[indexPath.row]
+//        var contentCell = cell.defaultContentConfiguration()
+//        
+//        
+////        contentCell.image = UIImage(named: card.mainImage)
+//        contentCell.text = card.bank
+//        contentCell.secondaryText = card.date
+//        
+//        cell.contentConfiguration = contentCell
+//        return cell
+//    }
 
     // MARK: - Navigation
 

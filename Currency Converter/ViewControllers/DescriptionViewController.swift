@@ -9,22 +9,33 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
 
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var bikLabel: UILabel!
+    @IBOutlet var innLabel: UILabel!
+    @IBOutlet var kppLabel: UILabel!
+    @IBOutlet var accountNumber: UILabel!
+    
+    var informationCard = Card.getCard().first?.info
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        descriptionLabel.text = informationCard?.description
+        bikLabel.text = "\(informationCard?.bik ?? 0)"
+        innLabel.text = "\(informationCard?.inn ?? 0)"
+        kppLabel.text = "\(informationCard?.kpp ?? 0)"
+        accountNumber.text = "\(informationCard?.accountNumber ?? 0)"
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func tuppedButtonCOPY() {
+        let alert = UIAlertController(
+            title: "Уведомление!",
+            message: "Реквизиты банков подленные, правда счета придуманы...)",
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
-    */
-
 }

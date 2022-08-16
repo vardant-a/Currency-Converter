@@ -10,7 +10,6 @@ import Foundation
 struct Card {
     let bank: String
     let mainImage: String
-    let date: String
     let balance: Balance
     let info: Info
     
@@ -19,7 +18,6 @@ struct Card {
             Card(
                 bank: "Сбербанк",
                 mainImage: "sber",
-                date: "11/24",
                 balance: Balance(
                     rub: 14374,
                     usd: 28.6,
@@ -36,7 +34,6 @@ struct Card {
             Card(
                 bank: "Альфабанк",
                 mainImage: "alfa",
-                date: "12/22",
                 balance:
                     Balance(
                         rub: 3924.7,
@@ -54,7 +51,6 @@ struct Card {
             Card(
                 bank: "Газпромбанк",
                 mainImage: "gzp",
-                date: "03/27",
                 balance: Balance(
                     rub: 31964.14,
                     usd: 1285,

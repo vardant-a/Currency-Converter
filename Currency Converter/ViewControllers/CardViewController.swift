@@ -19,17 +19,17 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cardImage.image = UIImage(named: card?.mainImage ?? "")
-        balanceLabel.text = "\(card?.balance.rub ?? 0) рублей."
+        balanceLabel.text = "\(card?.balance.rub ?? 0) рублей"
 
     }
     @IBAction func selectionCurrencyBalace(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            balanceLabel.text = "\(card?.balance.rub ?? 0) рублей."
+            balanceLabel.text = "\(card?.balance.rub ?? 0) рублей"
         case 1:
-            balanceLabel.text = "\(card?.balance.usd ?? 0) долларов."
+            balanceLabel.text = "\(card?.balance.usd ?? 0) долларов"
         default:
-            balanceLabel.text = "\(card?.balance.eur ?? 0) eвро."
+            balanceLabel.text = "\(card?.balance.eur ?? 0) eвро"
         }
 
     }

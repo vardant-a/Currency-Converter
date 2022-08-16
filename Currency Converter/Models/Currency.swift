@@ -8,6 +8,7 @@
 import Foundation
 
 struct Currency {
+    let name: 
     let name: String
     let info: String
     let designation: String

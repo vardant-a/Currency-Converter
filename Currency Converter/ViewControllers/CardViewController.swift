@@ -18,6 +18,9 @@ class CardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NetworkManager.shared.fetchAlamofire()
+        
         title = "Карта \(card?.bank ?? "хорош")a"
         cardImage.image = UIImage(named: card?.mainImage ?? "")
         balanceLabel.text = "\(card?.balance.rub ?? 0) рублей"

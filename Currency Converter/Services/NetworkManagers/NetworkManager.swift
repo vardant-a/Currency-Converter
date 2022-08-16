@@ -43,26 +43,22 @@ class NetworkManager {
         }.resume()
     }
     
-//    func fetchAlamofire() {
-//        AF.request(LinkCurrency.usd.rawValue)
-//            .validate()
-//            .responseJSON { dataResponse in
-//                switch dataResponse.result {
-//                case.success(let value):
-//                    guard let testDatum = value as? [[String: Any?]] else { return }
-//                    for testData in testDatum {
-//                        let dataTest = Currency(
-//                            name: <#T##String#>,
-//                            info: <#T##String#>,
-//                            designation: <#T##String#>,
-//                            image: <#T##String#>
-//                        )
-//                    }
-//                case .failure(let error):
-//                    print(error)
-//                
-//                }
-//                
-//            }
-//    }
+    func fetchAlamofire() {
+        AF.request(LinkCurrency)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case.success(let value):
+                    guard let testDatum = value as? [[String: Any?]] else { return }
+                    for dataCurrency in testDatum {
+                        let dataCurrency = Currency(
+                            name: , info: <#String#>, designation: <#String#>, image: <#String#>
+                            
+                        )
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
 }

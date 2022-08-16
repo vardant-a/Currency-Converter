@@ -25,19 +25,19 @@ class CollectionCardViewController: UIViewController {
     
     //MARK: - Navigation
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        guard let cardVC = segue.destination as? CardViewController else { return }
-    //////         guard let coctail = sender as? Coctail else { return }
-    ////         coctailVC.coctail = coctail
-    //
-    //    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            guard let cardVC = segue.destination as? CardViewController else { return }
+             guard let card = sender as? Card else { return }
+             cardVC.card = card
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let card = cards[indexPath.item]
         performSegue(withIdentifier: "showCard", sender: card)
     }
     
 }
-
+    // MARK: - CollectionView
 extension CollectionCardViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         cards.count

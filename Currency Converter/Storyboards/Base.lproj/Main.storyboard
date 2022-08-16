@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gDk-FP-UEM">
-                                <rect key="frame" x="16" y="160.00000000000003" width="396" height="318.66666666666674"/>
+                                <rect key="frame" x="16" y="160.00000000000003" width="396" height="365.66666666666674"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sber" translatesAutoresizingMaskIntoConstraints="NO" id="5LZ-YU-RDM">
                                         <rect key="frame" x="0.0" y="0.0" width="396" height="231.66666666666666"/>
@@ -130,6 +130,11 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR7-fz-u6d">
+                                        <rect key="frame" x="0.0" y="334.66666666666669" width="396" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Реквизиты"/>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RHI-jx-0gq">
@@ -172,16 +177,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Карта" id="WRd-02-4eI">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="qD1-rj-6Tc"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" id="RoR-xZ-jPz">
-                            <connections>
-                                <segue destination="Oj2-aP-K17" kind="show" id="rI3-rf-vDc"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="CurrencySelection" destination="VsV-6e-RR3" id="BXj-r6-kXl"/>
                         <outlet property="balanceLabel" destination="lOE-HE-YVH" id="PJp-zj-EKX"/>
                         <outlet property="cardImage" destination="5LZ-YU-RDM" id="2Uz-gh-Q4P"/>
+                        <segue destination="Oj2-aP-K17" kind="show" identifier="showBankInfo" id="YOk-S0-lQX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8s-sU-KRf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -481,7 +482,6 @@
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
         <image name="creditcard.circle" catalog="system" width="128" height="121"/>
         <image name="creditcard.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="sber" width="720" height="452"/>
         <systemColor name="systemBackgroundColor">

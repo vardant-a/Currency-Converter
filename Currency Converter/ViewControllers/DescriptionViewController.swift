@@ -15,17 +15,17 @@ class DescriptionViewController: UIViewController {
     @IBOutlet var kppLabel: UILabel!
     @IBOutlet var accountNumber: UILabel!
     
-    var informationCard = Card.getCard().first?.info
+    var infoCard = Card.getCard().first?.info
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        descriptionLabel.text = informationCard?.description
-        bikLabel.text = "\(informationCard?.bik ?? 0)"
-        innLabel.text = "\(informationCard?.inn ?? 0)"
-        kppLabel.text = "\(informationCard?.kpp ?? 0)"
-        accountNumber.text = "\(informationCard?.accountNumber ?? 0)"
+        descriptionLabel.text = infoCard?.description
+        bikLabel.text = "\(infoCard?.bik ?? 0)"
+        innLabel.text = "\(infoCard?.inn ?? 0)"
+        kppLabel.text = "\(infoCard?.kpp ?? 0)"
+        accountNumber.text = "\(infoCard?.accountNumber ?? 0)"
     }
     @IBAction func tuppedButtonCOPY() {
         let alert = UIAlertController(

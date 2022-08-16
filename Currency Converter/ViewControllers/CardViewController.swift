@@ -9,7 +9,7 @@ import UIKit
 
 class CardViewController: UIViewController {
     
-    let card = Card.getCard().randomElement()
+    var card = Card.getCard().randomElement()
 
 
     @IBOutlet var cardImage: UIImageView!
@@ -22,6 +22,7 @@ class CardViewController: UIViewController {
         balanceLabel.text = "\(card?.balance.rub ?? 0) рублей"
 
     }
+    
     @IBAction func selectionCurrencyBalace(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -31,19 +32,14 @@ class CardViewController: UIViewController {
         default:
             balanceLabel.text = "\(card?.balance.eur ?? 0) eвро"
         }
-
+        
+        
     }
-    
-    
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let infoBankVC = segue.destination as? DescriptionViewController else { return }
+        infoBankVC.infoCard = card?.info
     }
-    */
-
 }

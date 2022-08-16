@@ -18,6 +18,7 @@ class CardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Карта \(card?.bank ?? "хорош")a"
         cardImage.image = UIImage(named: card?.mainImage ?? "")
         balanceLabel.text = "\(card?.balance.rub ?? 0) рублей"
 
@@ -32,9 +33,12 @@ class CardViewController: UIViewController {
         default:
             balanceLabel.text = "\(card?.balance.eur ?? 0) eвро"
         }
-        
-        
     }
+    
+    @IBAction func tuppedRequisitesButton(_ sender: Any) {
+        performSegue(withIdentifier: "showBankInfo", sender: nil)
+    }
+    
 
     // MARK: - Navigation
 

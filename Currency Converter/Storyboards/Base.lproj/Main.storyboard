@@ -18,9 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s22-Qw-4uA">
-                                <rect key="frame" x="0.0" y="88" width="428" height="249"/>
+                                <rect key="frame" x="0.0" y="108" width="428" height="240"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q1b-G2-BWR">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="Hn6-aq-aMa"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q1b-G2-BWR">
                                     <size key="itemSize" width="321" height="183"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -28,24 +31,30 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cardCell" id="cDx-Nc-die" customClass="CardCollectionViewCell" customModule="Currency_Converter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="33" width="321" height="183"/>
+                                        <rect key="frame" x="0.0" y="28.666666666666668" width="321" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dBy-l8-cMQ">
                                             <rect key="frame" x="0.0" y="0.0" width="321" height="183"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sber" translatesAutoresizingMaskIntoConstraints="NO" id="whf-vn-QcB">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sber" translatesAutoresizingMaskIntoConstraints="NO" id="whf-vn-QcB">
                                                     <rect key="frame" x="0.0" y="0.0" width="321" height="183"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="whf-vn-QcB" secondAttribute="trailing" id="6lM-6T-vaF"/>
-                                                <constraint firstAttribute="bottom" secondItem="whf-vn-QcB" secondAttribute="bottom" id="9M8-aV-tJW"/>
-                                                <constraint firstItem="whf-vn-QcB" firstAttribute="top" secondItem="dBy-l8-cMQ" secondAttribute="top" id="Sw4-uX-xLE"/>
-                                                <constraint firstItem="whf-vn-QcB" firstAttribute="leading" secondItem="dBy-l8-cMQ" secondAttribute="leading" id="o2O-hd-v55"/>
+                                                <constraint firstItem="whf-vn-QcB" firstAttribute="leading" secondItem="dBy-l8-cMQ" secondAttribute="leading" id="1Cf-Ix-o5z"/>
+                                                <constraint firstAttribute="bottom" secondItem="whf-vn-QcB" secondAttribute="bottom" id="9zi-3J-XvK"/>
+                                                <constraint firstAttribute="trailing" secondItem="whf-vn-QcB" secondAttribute="trailing" id="Da4-Hk-jwU"/>
+                                                <constraint firstItem="whf-vn-QcB" firstAttribute="top" secondItem="dBy-l8-cMQ" secondAttribute="top" id="xuq-3k-Wpb"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="321" height="183"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="imageCardCollection" destination="whf-vn-QcB" id="v4Z-BO-dfQ"/>
                                         </connections>
@@ -56,10 +65,9 @@
                         <viewLayoutGuide key="safeArea" id="6kZ-3e-Ida"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6kZ-3e-Ida" firstAttribute="bottom" secondItem="s22-Qw-4uA" secondAttribute="bottom" constant="555" id="T42-Vo-VFA"/>
-                            <constraint firstItem="s22-Qw-4uA" firstAttribute="trailing" secondItem="6kZ-3e-Ida" secondAttribute="trailing" id="Xf0-8y-TlE"/>
-                            <constraint firstItem="s22-Qw-4uA" firstAttribute="top" secondItem="6kZ-3e-Ida" secondAttribute="top" id="gFz-Ra-SdE"/>
-                            <constraint firstItem="s22-Qw-4uA" firstAttribute="leading" secondItem="6kZ-3e-Ida" secondAttribute="leading" id="ioF-Oc-iLS"/>
+                            <constraint firstItem="s22-Qw-4uA" firstAttribute="leading" secondItem="6kZ-3e-Ida" secondAttribute="leading" id="bGK-gc-eL6"/>
+                            <constraint firstItem="s22-Qw-4uA" firstAttribute="trailing" secondItem="6kZ-3e-Ida" secondAttribute="trailing" id="pRR-z2-e8U"/>
+                            <constraint firstItem="s22-Qw-4uA" firstAttribute="top" secondItem="6kZ-3e-Ida" secondAttribute="top" constant="20" id="pXd-Zh-BVh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Кошелек" image="creditcard.circle" catalog="system" largeContentSizeImage="creditcard.circle.fill" id="z1D-je-DPd"/>
@@ -89,7 +97,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gDk-FP-UEM">
-                                <rect key="frame" x="16" y="160.00000000000003" width="396" height="365.66666666666674"/>
+                                <rect key="frame" x="16" y="160.00000000000003" width="396" height="318.66666666666674"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sber" translatesAutoresizingMaskIntoConstraints="NO" id="5LZ-YU-RDM">
                                         <rect key="frame" x="0.0" y="0.0" width="396" height="231.66666666666666"/>
@@ -130,11 +138,6 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR7-fz-u6d">
-                                        <rect key="frame" x="0.0" y="334.66666666666669" width="396" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Реквизиты"/>
-                                    </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RHI-jx-0gq">
@@ -177,6 +180,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Карта" id="WRd-02-4eI">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="qD1-rj-6Tc"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="exclamationmark.circle" catalog="system" id="fOu-zJ-Giv">
+                            <connections>
+                                <action selector="tuppedRequisitesButton:" destination="YO3-lN-Rj0" id="rn2-z1-PSN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="CurrencySelection" destination="VsV-6e-RR3" id="BXj-r6-kXl"/>
@@ -192,7 +200,7 @@
         <!--Exchange Rate-->
         <scene sceneID="QqE-Uu-Gbr">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="hCW-Dn-gCh" customClass="RatesViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="hCW-Dn-gCh" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="MkI-BJ-4Td">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,7 +482,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1JS-u0-Ybo"/>
+        <segue reference="lQB-N7-p80"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.up.right.and.arrow.down.left.rectangle" catalog="system" width="128" height="93"/>
@@ -482,6 +490,7 @@
         <image name="chart.line.uptrend.xyaxis" catalog="system" width="128" height="101"/>
         <image name="creditcard.circle" catalog="system" width="128" height="121"/>
         <image name="creditcard.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="exclamationmark.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="sber" width="720" height="452"/>
         <systemColor name="systemBackgroundColor">

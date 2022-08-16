@@ -6,14 +6,9 @@
 //
 
 import Foundation
+import Alamofire
 
-enum LinkCurrency: String {
-    case usd = "https://open.er-api.com/v6/latest/USD"
-    case eur = "https://open.er-api.com/v6/latest/EUR"
-    case rub = "https://open.er-api.com/v6/latest/RUB"
-    case gpb = "https://open.er-api.com/v6/latest/GBP"
-    case jpy = "https://open.er-api.com/v6/latest/JPY"
-}
+let LinkCurrency = "https://open.er-api.com/v6/latest/RUB"
 
 enum NetworkError: Error {
     case invalidURL
@@ -47,4 +42,27 @@ class NetworkManager {
             }
         }.resume()
     }
+    
+//    func fetchAlamofire() {
+//        AF.request(LinkCurrency.usd.rawValue)
+//            .validate()
+//            .responseJSON { dataResponse in
+//                switch dataResponse.result {
+//                case.success(let value):
+//                    guard let testDatum = value as? [[String: Any?]] else { return }
+//                    for testData in testDatum {
+//                        let dataTest = Currency(
+//                            name: <#T##String#>,
+//                            info: <#T##String#>,
+//                            designation: <#T##String#>,
+//                            image: <#T##String#>
+//                        )
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//                
+//                }
+//                
+//            }
+//    }
 }

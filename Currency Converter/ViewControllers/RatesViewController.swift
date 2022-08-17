@@ -9,36 +9,32 @@ import UIKit
 
 class RatesViewController: UITableViewController {
     
-    let testCard = Card.getCard()
-
+    @IBOutlet var multiplierTextField: UITextField!
+    
+//    let testCard = 
+    var multiplier: Double = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
 
     // MARK: - Table view data source
-
-
+//
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        testCard.count
+//        testCard.keys.count()
 //    }
-    
-    
+//
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ratesCell", for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "rateCell", for: indexPath)
 //        let card = testCard[indexPath.row]
 //        var contentCell = cell.defaultContentConfiguration()
-//        
-//        
-////        contentCell.image = UIImage(named: card.mainImage)
+//
+//
+//
 //        contentCell.text = card.bank
 //        contentCell.secondaryText = card.date
-//        
+//
 //        cell.contentConfiguration = contentCell
 //        return cell
 //    }
@@ -51,4 +47,13 @@ class RatesViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     //}
 
-}    
+}
+
+extension RatesViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let dateTextField = textField.text else { return }
+        guard let valueTF = Double(dateTextField) else { return }
+        multiplier = valueTF
+    }
+}

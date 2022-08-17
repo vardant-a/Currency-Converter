@@ -197,7 +197,7 @@
         <!--Exchange Rate-->
         <scene sceneID="QqE-Uu-Gbr">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="hCW-Dn-gCh" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="hCW-Dn-gCh" customClass="RatesViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="MkI-BJ-4Td">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,24 +206,27 @@
                             <rect key="frame" x="0.0" y="0.0" width="428" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FQF-mS-lEG">
-                                    <rect key="frame" x="23" y="58" width="240" height="34"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1KY-pT-aDX">
-                                    <rect key="frame" x="119" y="8" width="42" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fAC-3W-HeC">
+                                    <rect key="frame" x="16" y="8" width="396" height="84"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите необходимое количество валюты" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FQF-mS-lEG">
+                                            <rect key="frame" x="0.0" y="0.0" width="396" height="84"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="fAC-3W-HeC" secondAttribute="bottom" constant="8" id="Hbw-Fr-B64"/>
+                                <constraint firstAttribute="trailing" secondItem="fAC-3W-HeC" secondAttribute="trailing" constant="16" id="OXc-cq-rMt"/>
+                                <constraint firstItem="fAC-3W-HeC" firstAttribute="leading" secondItem="hOG-Ug-pDF" secondAttribute="leading" constant="16" id="cEa-Jk-aXb"/>
+                                <constraint firstItem="fAC-3W-HeC" firstAttribute="top" secondItem="hOG-Ug-pDF" secondAttribute="top" constant="8" id="dLe-NW-csy"/>
+                            </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ratesCell" id="Gf9-gV-3mD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rateCell" id="Gf9-gV-3mD">
                                 <rect key="frame" x="0.0" y="144.66666603088379" width="428" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gf9-gV-3mD" id="T1d-HO-ZvP">
@@ -239,6 +242,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Курс валют" image="chart.line.uptrend.xyaxis" catalog="system" id="Oxs-yW-u0M"/>
                     <navigationItem key="navigationItem" title="Exchange Rate" id="bhA-OK-eEv"/>
+                    <connections>
+                        <outlet property="multiplierTextField" destination="FQF-mS-lEG" id="hur-nI-HSo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERY-SO-e3B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

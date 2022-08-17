@@ -136,8 +136,8 @@
 				0E4E8CF028AC1B3E00673405 /* CollectionCardViewController.swift */,
 				0E4E8CE328ABD57400673405 /* CardViewController.swift */,
 				0E4E8CEB28AC03E700673405 /* DescriptionViewController.swift */,
-				0E4E8CE728ABE22400673405 /* RatesViewController.swift */,
 				0E4E8CED28AC112F00673405 /* ProfileViewController.swift */,
+				0E4E8CE728ABE22400673405 /* RatesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

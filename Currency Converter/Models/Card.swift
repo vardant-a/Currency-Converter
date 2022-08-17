@@ -12,6 +12,7 @@ struct Card {
     let mainImage: String
     let balance: Balance
     let info: Info
+    let commission: Double
     
     static func getCard() -> [Card] {
         return [
@@ -29,7 +30,8 @@ struct Card {
                     inn: 7707083893,
                     kpp: 773643002,
                     accountNumber: 8129434458
-                )
+                ),
+                commission: 0.15
             ),
             Card(
                 bank: "Альфабанк",
@@ -46,7 +48,8 @@ struct Card {
                     inn: 7728168971,
                     kpp: 770801001,
                     accountNumber: 0540349129
-                )
+                ),
+                commission: 0.9
             ),
             Card(
                 bank: "Газпромбанк",
@@ -62,7 +65,8 @@ struct Card {
                     inn: 7744001497,
                     kpp: 772801001,
                     accountNumber: 4021857711
-                )
+                ),
+                commission: 0.3
             )
         ]
     }

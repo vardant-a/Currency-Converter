@@ -10,18 +10,26 @@ import UIKit
 class CollectionCardViewController: UIViewController {
     
     @IBOutlet var cardCollectionView: UICollectionView!
-    @IBOutlet var cardPageControl: UIPageControl!
     
     let cards = Card.getCard()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(cards)
+        
+        NetworkManager.shared.fetchRates(from: LinkCurrency) { [weak self] result in
+            switch result {
+            case .success(let rates):
+                print(rates)
+            case .failure(let error):
+                print(error)
+            }
+        }
         
         cardCollectionView.delegate = self
         cardCollectionView.dataSource = self
     }
+    
     
     //MARK: - Navigation
     

@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftUI
 
 class CardViewController: UIViewController {
     
-    var card = Card.getCard().randomElement()
-
+    var card = Card.getCard().first
+    var overallBalance: Double = 0
+//    var ExchangeRate = RateInfo = [:]
 
     @IBOutlet var cardImage: UIImageView!
     @IBOutlet var CurrencySelection: UISegmentedControl!
@@ -19,7 +22,9 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkManager.shared.fetchAlamofire()
+        
+        overallBalance = (card?.balance.rub ?? 0) + ((card?.balance.usd ?? 1) * 1.0)
+        print(overallBalance)
         
         title = "Карта \(card?.bank ?? "хорош")a"
         cardImage.image = UIImage(named: card?.mainImage ?? "")

@@ -22,7 +22,7 @@ struct User {
     static func getUser() -> User {
         User(
             firstName: "Брюс",
-            lastName: "Вэйн",
+            lastName: "Уэйн",
             image: "bruce",
             email: "batman@gmail.com",
             phoneNumber: "+5-911-911-19-39",

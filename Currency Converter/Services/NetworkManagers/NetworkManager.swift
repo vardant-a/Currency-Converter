@@ -26,7 +26,7 @@ class NetworkManager {
             completion(.failure(.invalidURL))
             return
         }
-
+        
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
                 completion(.failure(.noData))
@@ -43,21 +43,17 @@ class NetworkManager {
         }.resume()
     }
     
-    func fetchAlamofire() {
-        AF.request(LinkCurrency)
+
+    func fetchRates(from url: String, completion: @escaping(Result<[Currency], AFError>) -> Void) {
+        AF.request(url)
             .validate()
             .responseJSON { dataResponse in
                 switch dataResponse.result {
-                case.success(let value):
-                    guard let testDatum = value as? [[String: Any?]] else { return }
-                    for dataCurrency in testDatum {
-                        let dataCurrency = Currency(
-                            name: , info: <#String#>, designation: <#String#>, image: <#String#>
-                            
-                        )
-                    }
+                case .success(let value):
+                    let rate = Currency.getRate(from: value)
+//                    completion(.success(rate))
                 case .failure(let error):
-                    print(error)
+                    completion(.failure(error))
                 }
             }
     }

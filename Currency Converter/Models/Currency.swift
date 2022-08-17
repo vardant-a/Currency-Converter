@@ -12,28 +12,15 @@ import Foundation
 
 struct Currency {
     
-    let rates: [String: Rate]?
+    let rates: [String: Double]?
     
-    init(rates: [String: Rate]) {
-        self.rates = rates
+    init(value: [String: Any]) {
+        rates = value["rates"] as? [String: Double]
     }
     
-    static func getRate(from value: Any) -> [String: Rate] {
-        guard let disclosedData = value as? [String: Any] else { return [:]}
-        var dataRate = [String: Rate]()
-        
-        for elementData in disclosedData {
-            guard let elementDataRage = elementData.value as? [String: Rate] else { return [:] }
-
-            dataRate[elementData.key] = Rate(
-                rub: elementDataRage["RUB"] as? Double ?? 0,
-                usd: elementDataRage["USD"] as? Double ?? 0,
-                eur: elementDataRage["EUR"] as? Double ?? 0,
-                gbp: elementDataRage["GBP"] as? Double ?? 0,
-                jpy: elementDataRage["JPY"] as? Double ?? 0
-            )
-        }
-        return dataRate
+    static func getRate(from value: Any) -> Currency? {
+        guard let value = value as? [String: Double] else { return nil }
+        return Currency(value: value)
     }
 }
 

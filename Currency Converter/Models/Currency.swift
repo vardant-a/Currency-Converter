@@ -7,31 +7,27 @@
 
 import Foundation
 
+
+// Забуксовал в модели, подскажите куда ползти, перетыкал всё что только в голову пришло
+
 struct Currency {
-    let name: String
-    let info: String
-    let designation: String
-    let image: String
-    let value: Double = 1
     
-    static func getInfoList() -> [Currency] {
-        var infoListOfСurrency: [Currency] = []
-        let iterationCount = min(
-            CurrencyDescription.shared.named.count,
-            CurrencyDescription.shared.designations.count,
-            CurrencyDescription.shared.informations.count
-            )
-        
-        for index in 0..<iterationCount {
-            infoListOfСurrency.append(
-                Currency(
-                    name: CurrencyDescription.shared.named[index],
-                    info: CurrencyDescription.shared.informations[index],
-                    designation: CurrencyDescription.shared.designations[index],
-                    image: CurrencyDescription.shared.images[index]
-                )
-            )
-        }
-                return infoListOfСurrency
+    let rates: [String: Double]?
+    
+    init(value: [String: Any]) {
+        rates = value["rates"] as? [String: Double]
     }
+    
+    static func getRate(from value: Any) -> Currency? {
+        guard let value = value as? [String: Double] else { return nil }
+        return Currency(value: value)
+    }
+}
+
+struct Rate {
+    let rub: Double
+    let usd: Double
+    let eur: Double
+    let gbp: Double
+    let jpy: Double
 }

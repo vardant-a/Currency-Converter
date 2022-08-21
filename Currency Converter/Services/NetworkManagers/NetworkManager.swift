@@ -6,14 +6,9 @@
 //
 
 import Foundation
+import Alamofire
 
-enum LinkCurrency: String {
-    case usd = "https://open.er-api.com/v6/latest/USD"
-    case eur = "https://open.er-api.com/v6/latest/EUR"
-    case rub = "https://open.er-api.com/v6/latest/RUB"
-    case gpb = "https://open.er-api.com/v6/latest/GBP"
-    case jpy = "https://open.er-api.com/v6/latest/JPY"
-}
+let LinkCurrency = "https://open.er-api.com/v6/latest/RUB"
 
 enum NetworkError: Error {
     case invalidURL
@@ -31,7 +26,7 @@ class NetworkManager {
             completion(.failure(.invalidURL))
             return
         }
-
+        
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
                 completion(.failure(.noData))
@@ -46,5 +41,20 @@ class NetworkManager {
                 completion(.failure(.decodingError))
             }
         }.resume()
+    }
+    
+
+    func fetchRates(from url: String, completion: @escaping(Result<[Currency], AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let rate = Currency.getRate(from: value)
+//                    completion(.success(rate))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
     }
 }
